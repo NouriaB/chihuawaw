@@ -1,0 +1,273 @@
+*{
+  margin: 0; 
+  padding: 0;
+}
+
+body{
+  font-family: "Comfortaa", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+section{
+  border-top: 10px solid black;
+  height: 80vh;
+  display: flex;
+  gap: 30vh;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}
+
+.divLogo{
+  display: flex;
+  width: 48%;
+  justify-content:right;
+}
+
+.logo{
+    width: 50vh;
+    object-fit: contain;
+}
+
+.wrapper {
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  display: flex;
+  }
+  
+  .switch { /* toggle */
+    transform: translateY(-200px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5.3vh;
+    width: 8.5vh;
+    height: 3.4vh;
+  }
+  
+  .card-side::before { /* Connexiontoggle */
+    position: absolute;
+    content: 'Connexion';
+    left: -19vh;
+    top: 0;
+    text-decoration: underline;
+    color: black;
+    font-weight: 900;
+  }
+  
+  .card-side::after { /* Inscriptiontoggle */
+    position: absolute;
+    content: 'Inscription';
+    right: -20vh;
+    top: 0;
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+  }
+  
+  .toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .designToggle { /* rectangle du toggle */
+    box-sizing: border-box;
+    border-radius: 5vh;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 8.3vh; 
+    border: 1px solid silver;
+    background-color: lightblue;
+    transition: 0.3s;
+  }
+  
+  .designToggle:before { /* cercle du toggle */
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    height: 3.1vh;
+    width: 3.1vh;
+    border: 1px solid silver;
+    border-radius: 5vh; 
+    top: 0;
+    left: -0.01vh;
+    right: 0;
+    bottom: -5vh;
+    background-color: white;
+    transition: 0.3s;
+  }
+  
+  .toggle:checked + .designToggle {
+    background-color: #3A6E95; /* couleur du toggle ; */
+  }
+  
+  .toggle:checked + .designToggle:before { /* glissement du toggle */ 
+    /* transform: translateX(30px); */
+    transform: translateX(4.9vh);
+  } 
+  
+  .toggle:checked ~ .card-side:before {
+    text-decoration: none;
+  }
+  
+  .toggle:checked ~ .card-side:after {
+    text-decoration: underline;
+  }
+  
+  .flip-card__inner { /* card */ 
+    width: 52vh;
+    height: 50vh;
+    position: relative;
+    background-color: transparent;
+    /* perspective: 1000px; */
+      /* width: 100%;
+      height: 100%; */
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .toggle:checked ~ .flip-card__inner {
+    transform: rotateY(180deg);
+  }
+  
+  .toggle:checked ~ .flip-card__front {
+    box-shadow: none;
+  }
+  
+  .flip-card__front, .flip-card__back {
+    padding: 3.3vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: white; /* fond des 2 forms*/
+    gap: 3.5vh;
+    border-radius: 2vh;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  
+  .flip-card__back {
+    justify-content: center;
+    transform: rotateY(180deg);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5vh;
+    /* width: 46.5vh; */
+    margin: auto;
+  }
+  
+  .title {
+    margin: 3vh 0 3vh 0;
+    font-size: 4.4vh;
+    font-weight: 900;
+    text-align: center;
+    color: black;
+  }
+  
+  .input {
+    width: 42vh;
+    line-height: 5vh;
+    border-radius: 3vh;
+    border: 2px solid #666;
+    background-color: white;
+    font-size: 2.5vh;
+    font-weight: 600;
+    color: black;
+    padding: 5px 10px;
+    outline: none;
+  }
+  
+  .input::placeholder {
+    color: #666;
+    opacity: 0.8;
+  }
+  
+  .input:focus {
+    border: 2px solid steelblue;
+  }
+  
+  .formBTN:active, .button-confirm:active {
+    transform: translate(3px, 3px);
+  }
+  
+  .formBTN {
+    margin: 20px 0 20px 0;
+    width: 60%;
+    line-height: 6vh;
+    border-radius: 3vh;
+    background-color: black;
+    font-size: 2.5vh;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    border: none;
+  } 
+  .formBTN:hover{
+    transition: 0.1s;
+    background-color: rgb(66, 113, 152);
+  }
+
+.pAlerteErreur{
+  position: absolute;
+  bottom: 1.7vh;
+  text-align: center;
+  margin: auto;
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  width: 42vh;
+  padding : 4px;
+  border-radius: 5px;
+  font-size: 2vh;
+}
+
+
+.pAlerteRedirection{
+  position: absolute;
+  bottom: 1.7vh;
+  text-align: center;
+  margin: auto;
+  background-color: #caedc1;
+  border-color: #bcf1d0;
+  color: #2c8c5c;
+  width: 42vh;
+  padding : 4px;
+  border-radius: 5px;
+  font-size: 2vh;
+}
+
+.divRetourSite{
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 60%;
+  gap: 1.5vh;
+  font-weight: bold;
+  margin-top: 7.7vh;
+  border-bottom: 1px solid black;
+  padding-bottom: 1vh;
+}
+
+.iconeFleche{
+  width : 5vh;
+}

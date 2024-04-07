@@ -1,0 +1,129 @@
+:root{
+    --bleugris: #3A6E95;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Comfortaa", sans-serif;
+}
+
+.bandeauLivraison{
+    display: flex;
+    background-color: var(--bleugris);
+    color: white;
+    line-height: 4vh;
+    font-size: 1.6vh;
+    justify-content: center; 
+    align-items: center;
+    gap: 20vh;
+}
+
+.bandeauLivraison li {
+    display: flex;
+    align-items: center;
+    gap : 1vh;
+}
+
+.iconeBandeau{
+    height: 3vh;
+    width: auto;
+}
+
+.mainContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+}
+ 
+nav a{
+    color: black;
+} 
+
+.divLogo, nav {
+    width: 33%;
+}
+
+.logo{
+    display: flex;
+    width: 20vh;
+    margin: auto;
+}
+
+.ulNav{
+    display: flex;
+    gap: 5vh;
+    font-weight:bold;
+    font-size: 2vh;
+    justify-content: end;
+}
+
+.divFavoris, .divCompte, .divPanier{
+    display: flex;
+    flex-direction: column;
+    gap : 0.4vh;
+}
+
+.iconeNav{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 3.5vh;
+    height: 4vh;
+    transition: background-image 0.2s ease; /* Ajout de la transition */
+}
+
+.divFavoris .iconeNav{
+    background-image: url("images/navbar/iconeFavoris.png");
+}
+.divFavoris:hover .iconeNav{
+    background-image: url("images/navbar/iconeFavorisRempli.png");
+}
+
+.divCompte .iconeNav{
+    background-image: url("images/navbar/iconeCompte.png");
+}
+.divCompte:hover .iconeNav{
+    background-image: url("images/navbar/iconeCompteRempli.png");
+}
+
+.divPanier .iconeNav{
+    background-image: url("images/navbar/iconePanier.png");
+}
+.divPanier:hover .iconeNav{
+    background-image: url("images/navbar/iconePanierRempli.png");
+}
+
+/* Début Loupe */
+.container-input {    
+    position: relative;
+    min-width: 150px;
+    width: 33%;
+  }
+  .input {
+    width: 150px;
+    padding: 10px 0px 10px 40px;
+    border-radius: 9999px;
+    border: solid 1px #333;
+    transition: all .2s ease-in-out;
+    outline: none;
+    opacity: 0.8;
+  }
+  .container-input svg {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+  }
+  .input:focus {
+    opacity: 1;
+    width: 250px;
+  } /* Fin Loupe */

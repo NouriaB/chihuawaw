@@ -1,0 +1,69 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+    height: 65vh;
+    position: relative;
+}
+
+.divGauche, .divDroite{
+    width : 50%;
+}
+
+video{
+    width : 100%;
+    height: 100%; /* Pour remplir complètement le conteneur*/
+    object-fit: cover; /* redimensionne la vidéo pour qu'elle remplisse entièrement le conteneur */
+}  
+
+.divCollection{
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    background-color: white;
+    margin: auto;
+    flex-direction: column;
+    gap: 4vh;
+    font-weight: 900;
+    padding: 1vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1; /* place la div au 1er plan pour avoir la main sur l'option vidéo en inscrustation qui pose pb avec le bouton CHIHUAGIRL */
+    transform: translate(-50%, -50%); /* Déplace l'élément de moitié de sa propre largeur et hauteur vers le haut et vers la gauche */
+}
+
+.pCollectionPrintemps
+{
+    text-align: center;
+    font-size: large;
+}
+
+.divChihuaBoyGirl{
+    display: flex;
+    gap: 5vh;
+    margin: auto;
+    text-align: center;
+}
+
+.divChihuaBoyGirl a{
+    background-color: black;
+    color: white;
+    padding : 1.2vh 2.5vh ;
+    border: 2px solid black;
+    font-size: 2.2vh;
+    z-index: 1;
+}
+
+.divChihuaBoyGirl a:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
