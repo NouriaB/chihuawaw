@@ -5,94 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogue</title>
     <link rel="stylesheet" href="produits.css">
-    <?php include 'header.php'; ?> 
+
+    <?php include 'header.php';  
+    include "BDDconnexion.php";
+    $sql = "SELECT * FROM produit";
+    $result = mysqli_query($id, $sql);
+    ?>
 </head>
 <body>
 
-    <section>
+    <section> 
 
-    <div class="carte">
-        <img class="image" src="images/paillettesRose1.jpg" alt="" 
-        onmouseover="this.src='images/paillettesRose2.jpg'"
-        onmouseout="this.src='images/paillettesRose1.jpg'">
-        <p class="titreArticle">Robe de soirée à noeud</p>
-        <div class="divInfosArticle">
-            <p>19,99 €</p>
-            <p>Logo</p>
-        </div>
-        <button class="BTNdescription">Description</button>
-    </div>
-
-    <div class="carte">
-        <img class="image" src="images/paillettesRose1.jpg" alt="" 
-        onmouseover="this.src='images/paillettesRose2.jpg'"
-        onmouseout="this.src='images/paillettesRose1.jpg'">
-        <p class="titreArticle">Robe de soirée à noeud</p>
-        <div class="divInfosArticle">
-            <p>19,99 €</p>
-            <p>Logo</p>
-        </div>
-        <button class="BTNdescription">Description</button>
-    </div>
-
-    <div class="carte">
-        <img class="image" src="images/paillettesRose1.jpg" alt="" 
-        onmouseover="this.src='images/paillettesRose2.jpg'"
-        onmouseout="this.src='images/paillettesRose1.jpg'">
-        <p class="titreArticle">Robe de soirée à noeud</p>
-        <div class="divInfosArticle">
-            <p>19,99 €</p>
-            <p>Logo</p>
-        </div>
-        <button class="BTNdescription">Description</button>
-    </div>
-
-    <div class="carte">
-        <img class="image" src="images/paillettesRose1.jpg" alt="" 
-        onmouseover="this.src='images/paillettesRose2.jpg'"
-        onmouseout="this.src='images/paillettesRose1.jpg'">
-        <p class="titreArticle">Robe de soirée à noeud</p>
-        <div class="divInfosArticle">
-            <p>19,99 €</p>
-            <p>Logo</p>
-        </div>
-        <button class="BTNdescription">Description</button>
-    </div>
-
-    <div class="carte">
-        <img class="image" src="images/paillettesRose1.jpg" alt="" 
-        onmouseover="this.src='images/paillettesRose2.jpg'"
-        onmouseout="this.src='images/paillettesRose1.jpg'">
-        <p class="titreArticle">Robe de soirée à noeud</p>
-        <div class="divInfosArticle">
-            <p>19,99 €</p>
-            <p>Logo</p>
-        </div>
-        <button class="BTNdescription">Description</button>
-    </div>
-
-    <div class="carte">
-        <img class="image" src="images/paillettesRose1.jpg" alt="" 
-        onmouseover="this.src='images/paillettesRose2.jpg'"
-        onmouseout="this.src='images/paillettesRose1.jpg'">
-        <p class="titreArticle">Robe de soirée à noeud</p>
-        <div class="divInfosArticle">
-            <p>19,99 €</p>
-            <p>Logo</p>
-        </div>
-        <button class="BTNdescription">Description</button>
-    </div>
+    <?php
+    if (mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)) {
+            ?>
+            <div class="carte">
+                <img class="image" src="images/vetements/<?php echo $row['image_front'] ?>" alt="" 
+                onmouseover="this.src='images/vetements/<?php echo $row['image_back']; ?>'"
+                onmouseout="this.src='images/vetements/<?php echo $row['image_front']; ?>'">
+                <p class="titreArticle"><?php echo $row['nom_produit']; ?></p>
+                <div class="divInfosArticle">
+                    <p><?php echo $row['prix']; ?> €</p>
+                    <p>Logo</p>
+                </div>
+                <button class="BTNdescription">Description</button>
+            </div>
+            <?php
+        }
+    } else {
+        echo "Aucun produit trouvé.";
+    }
+    ?>
     
-    <!-- <div class="card">
-        <div class="card-details">
-            <img src="images/paillettesRose1" alt="">
-             <p class="text-title">Card title</p> -->
-            <!-- <p class="text-body">Here are the details of the card</p> -->
-        <!-- </div>
-        <button class="BTNdescription">Description</button>
-    </div> --> 
-
     </section>
+
+    <?php include 'footer.php';?>
 
     
 </body>

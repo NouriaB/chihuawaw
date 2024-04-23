@@ -3,7 +3,7 @@ section{
     flex-wrap: wrap; /* Permet aux cartes de passer à la ligne lorsque nécessaire */
     width: 90%;
     margin: auto;
-    gap: 2.25%;
+    gap: 3.67%;
 }
 
 .carte{
@@ -19,7 +19,7 @@ section{
 }
 
 .image{
-    width: 40vh;
+    width: 38vh;
     object-fit: contain;
 }
 
