@@ -18,7 +18,7 @@ if(isset($_POST["bout_connexion"])){
             header("location:index.php");
         } else $erreur =  "<p class='pAlerteErreur'> Identifiants incorrects </p>";
     } else $erreur =  "<p class='pAlerteErreur'> Identifiants incorrects </p>";
-}?>
+}
 
 if(isset($_POST["bout_inscription"])){
     $nom = $_POST["nom"];
@@ -56,6 +56,7 @@ if(isset($_POST["bout_inscription"])){
                 <span class="designToggle"></span>
                 <span class="card-side"></span>
                 <div class="flip-card__inner">
+
                     <div class="flip-card__front">
                         <div class="title">Se connecter</div>
                         <!-- Form connexion -->
@@ -67,6 +68,7 @@ if(isset($_POST["bout_inscription"])){
                             <?php if(isset($redirection)) echo $redirection;?>
                         </form>
                     </div>
+
                     <div class="flip-card__back">
                         <div class="title">S'inscrire</div>
                         <!-- Form inscription -->
@@ -78,6 +80,7 @@ if(isset($_POST["bout_inscription"])){
                             <input class="formBTN" type="submit" value="Valider" name="bout_inscription">
                         </form>
                     </div>
+                    
                 </div>
             </label>
         </div>   

@@ -12,6 +12,11 @@
 
 body{
     font-family: "Comfortaa", sans-serif;
+    font-size: 2.5vh;
+}
+
+a{
+    color: black;
 }
 
 .bandeauLivraison{
@@ -43,10 +48,6 @@ body{
     width: 95%;
     margin: auto;
 }
- 
-nav a{
-    color: black;
-} 
 
 .divLogo, nav {
     width: 33%;
@@ -69,7 +70,7 @@ nav a{
 .divFavoris, .divCompte, .divPanier{
     display: flex;
     flex-direction: column;
-    gap : 0.4vh;
+    gap : 0.4vh; /* espace vertical entre l'icone et le texte */
 }
 
 .iconeNav{
@@ -108,7 +109,8 @@ nav a{
     min-width: 150px;
     width: 33%;
   }
-  .input {
+
+.input {
     width: 150px;
     padding: 10px 0px 10px 40px;
     border-radius: 9999px;
@@ -116,14 +118,71 @@ nav a{
     transition: all .2s ease-in-out;
     outline: none;
     opacity: 0.8;
-  }
-  .container-input svg {
+}
+
+.container-input svg {
     position: absolute;
     top: 50%;
     left: 10px;
     transform: translate(0, -50%);
-  }
-  .input:focus {
+}
+
+.input:focus {
     opacity: 1;
     width: 250px;
-  } /* Fin Loupe */
+} /* Fin Loupe */
+
+.ulProduits{
+    display: flex;
+    margin: auto;
+    /* width: 70%; */
+    justify-content: space-around;
+    flex-direction: row;
+    font-weight: bold;
+    margin-top: 1.5vh; 
+    margin-bottom: 2vh; 
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    /* align-items: center; */
+    padding: 1.5vh;
+}
+
+.ulProduits li a {
+    position: relative;
+    padding: 1.5vh;
+    align-items: center;
+}
+
+/* Animation nav */
+.ulProduits li a::before,
+.ulProduits li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    background-color: black;
+    transition: width 0.2s ease;
+    height: 2px;
+}
+
+.ulProduits li a::before {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ulProduits li a::after {
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.ulProduits li a:hover::before {
+    width: 100%;
+}
+
+.ulProduits li a:hover::after {
+    width: 100%;
+}
+
+.ulProduits li a:hover{
+    color: var(--bleugris);
+}

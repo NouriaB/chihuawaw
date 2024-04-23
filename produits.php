@@ -15,11 +15,72 @@
         <img class="image" src="images/paillettesRose1.jpg" alt="" 
         onmouseover="this.src='images/paillettesRose2.jpg'"
         onmouseout="this.src='images/paillettesRose1.jpg'">
-        <p>Titre</p>
-        <div class="flex">
-            <p>Prix</p>
+        <p class="titreArticle">Robe de soirée à noeud</p>
+        <div class="divInfosArticle">
+            <p>19,99 €</p>
             <p>Logo</p>
         </div>
+        <button class="BTNdescription">Description</button>
+    </div>
+
+    <div class="carte">
+        <img class="image" src="images/paillettesRose1.jpg" alt="" 
+        onmouseover="this.src='images/paillettesRose2.jpg'"
+        onmouseout="this.src='images/paillettesRose1.jpg'">
+        <p class="titreArticle">Robe de soirée à noeud</p>
+        <div class="divInfosArticle">
+            <p>19,99 €</p>
+            <p>Logo</p>
+        </div>
+        <button class="BTNdescription">Description</button>
+    </div>
+
+    <div class="carte">
+        <img class="image" src="images/paillettesRose1.jpg" alt="" 
+        onmouseover="this.src='images/paillettesRose2.jpg'"
+        onmouseout="this.src='images/paillettesRose1.jpg'">
+        <p class="titreArticle">Robe de soirée à noeud</p>
+        <div class="divInfosArticle">
+            <p>19,99 €</p>
+            <p>Logo</p>
+        </div>
+        <button class="BTNdescription">Description</button>
+    </div>
+
+    <div class="carte">
+        <img class="image" src="images/paillettesRose1.jpg" alt="" 
+        onmouseover="this.src='images/paillettesRose2.jpg'"
+        onmouseout="this.src='images/paillettesRose1.jpg'">
+        <p class="titreArticle">Robe de soirée à noeud</p>
+        <div class="divInfosArticle">
+            <p>19,99 €</p>
+            <p>Logo</p>
+        </div>
+        <button class="BTNdescription">Description</button>
+    </div>
+
+    <div class="carte">
+        <img class="image" src="images/paillettesRose1.jpg" alt="" 
+        onmouseover="this.src='images/paillettesRose2.jpg'"
+        onmouseout="this.src='images/paillettesRose1.jpg'">
+        <p class="titreArticle">Robe de soirée à noeud</p>
+        <div class="divInfosArticle">
+            <p>19,99 €</p>
+            <p>Logo</p>
+        </div>
+        <button class="BTNdescription">Description</button>
+    </div>
+
+    <div class="carte">
+        <img class="image" src="images/paillettesRose1.jpg" alt="" 
+        onmouseover="this.src='images/paillettesRose2.jpg'"
+        onmouseout="this.src='images/paillettesRose1.jpg'">
+        <p class="titreArticle">Robe de soirée à noeud</p>
+        <div class="divInfosArticle">
+            <p>19,99 €</p>
+            <p>Logo</p>
+        </div>
+        <button class="BTNdescription">Description</button>
     </div>
     
     <!-- <div class="card">
