@@ -3,10 +3,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
 
-<?php
-header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
-header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date dans le passé pour éviter les pb de cache
-?>
+<?php session_start();?>
 
 <header>
 
@@ -14,6 +11,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date dans le passé pour é
 
         <!-- Logo -->
         <div class="divLogo"><a href="index.php"><img src="images/logo.jpg" alt="" class="logo"></a></div>
+        
         <!-- Loupe -->
         <div class="containerLoupe">
             <input type="text" placeholder="Search" name="text" class="inputLoupe">
@@ -25,19 +23,17 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date dans le passé pour é
         <!-- div icones -->
             
             <div class="divIcones">
-                <div class="bonjourPrenom">
-                    <?php 
-                    session_start();
-                    if(isset($_SESSION["prenom"]))
-                        echo 'Bonjour ' . $_SESSION["prenom"] . ' !';?>
-                </div>
                 <div class="divFavoris" onclick="location.href='favoris.php';" style="cursor: pointer;">
                     <div class="icone"></div>
                     <a href="favoris.php">Favoris</a>
                 </div>
                 <div class="divCompte" onclick="location.href='connexion.php';" style="cursor: pointer;">
                     <div class="icone"></div>
-                    <li><a href="connexion.php">Compte</a>
+                    <?php if(isset($_SESSION["prenom"])) : ?>
+                        <li><a href="connexion.php"><?php echo $_SESSION["prenom"]; ?></a></li>
+                    <?php else : ?>
+                        <li><a href="connexion.php">Compte</a></li>
+                    <?php endif; ?>
                 </div>
                 <div class="divPanier" onclick="location.href='panier.php';" style="cursor: pointer;">
                     <div class="icone"></a></div>

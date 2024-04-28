@@ -16,6 +16,7 @@ if(isset($_POST["bout_connexion"])){
             $_SESSION["prenom"] = $ligne["prenom"];
             $_SESSION["id_utilisateur"]=$ligne["id_utilisateur"];
             header("location:index.php");
+            $redirectionConnexion =  "<p class='pAlerteredirectionConnexion'> Bienvenue </p>";
         } else $erreur =  "<p class='pAlerteErreur'> Identifiants incorrects </p>";
     } else $erreur =  "<p class='pAlerteErreur'> Identifiants incorrects </p>";
 }

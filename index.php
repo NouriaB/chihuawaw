@@ -8,7 +8,7 @@
     <?php include 'header.php'; ?> 
 </head>
 
-<body>
+<body class="body">
     <section>
         <div class="divGauche">
             <video autoplay muted loop disablePictureInPicture src="videos/indexBleueCoupee.mp4" ></video>

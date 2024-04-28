@@ -12,7 +12,8 @@
     $result = mysqli_query($id, $sql);
     ?>
 </head>
-<body>
+
+<body class="body">
 
     <section> 
 
