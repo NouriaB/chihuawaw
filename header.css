@@ -19,28 +19,6 @@ a{
     color: black;
 }
 
-.bandeauLivraison{
-    display: flex;
-    background-color: var(--bleugris);
-    color: white;
-    line-height: 4vh;
-    font-size: 1.6vh;
-    justify-content: center; 
-    align-items: center;
-    gap: 20vh;
-}
-
-.bandeauLivraison li {
-    display: flex;
-    align-items: center;
-    gap : 1vh;
-}
-
-.iconeBandeau{
-    height: 3vh;
-    width: auto;
-}
-
 .mainContainer{
     display: flex;
     align-items: center;
@@ -52,16 +30,20 @@ a{
 .logo{
     display: flex;
     width: 20vh;
-    margin: auto;
-    align-items: left;
 }
 
-.ulNav{
+.divIcones{
     display: flex;
     gap: 5vh;
     font-weight:bold;
     font-size: 2vh;
-    justify-content: end;
+    position: relative;
+}
+
+.bonjourPrenom{
+    position: absolute;
+    bottom : 0;
+    left: -25vh;
 }
 
 .divFavoris, .divCompte, .divPanier{
@@ -70,34 +52,44 @@ a{
     gap : 0.4vh; /* espace vertical entre l'icone et le texte */
 }
 
-.iconeNav{
+.divIcones .icone{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 3.5vh;
     height: 4vh;
-    transition: background-image 0.2s ease; /* Ajout de la transition */
+    transition: background-image 0.2s ease;
 }
 
-.divFavoris .iconeNav{
+.divFavoris .icone{
     background-image: url("images/navbar/iconeFavoris.png");
 }
-.divFavoris:hover .iconeNav{
-    background-image: url("images/navbar/iconeFavorisRempli.png");
-}
 
-.divCompte .iconeNav{
+.divCompte .icone{
     background-image: url("images/navbar/iconeCompte.png");
 }
-.divCompte:hover .iconeNav{
-    background-image: url("images/navbar/iconeCompteRempli.png");
-}
 
-.divPanier .iconeNav{
+.divPanier .icone{
     background-image: url("images/navbar/iconePanier.png");
 }
-.divPanier:hover .iconeNav{
+
+.divFavoris:hover .icone,
+.divFavoris:hover a {
+    background-image: url("images/navbar/iconeFavorisRempli.png");
+    color: var(--bleugris);
+
+}
+
+.divCompte:hover .icone,
+.divCompte:hover a {
+    background-image: url("images/navbar/iconeCompteRempli.png");
+    color: var(--bleugris);
+}
+
+.divPanier:hover .icone,
+.divPanier:hover a{
     background-image: url("images/navbar/iconePanierRempli.png");
+    color: var(--bleugris);
 }
 
 /* Début Loupe */
@@ -131,55 +123,66 @@ a{
 
 } /* Fin Loupe */
 
-.ulProduits{
+nav{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.ulNav{
     display: flex;
     margin: auto;
-    width: 88%;
+    width: 90%;
     justify-content: space-around;
     flex-direction: row;
     font-weight: bold;
     margin-top: 1.5vh; 
     margin-bottom: 2vh; 
-    padding: 1.5vh;
+    padding: 1vh;
+    border-radius: 3vh;
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
 }
 
-.ulProduits li a {
+.ulNav li a {
     position: relative;
-    padding: 1.5vh;
+    padding: 0.5vh;
     align-items: center;
+    line-height: 4vh;
+    color: #333;
+}
+.ulNav li a:hover {
+    color: var(--bleugris);
 }
 
 /* Animation nav */
-.ulProduits li a::before,
-.ulProduits li a::after {
+.ulNav li a::before,
+.ulNav li a::after {
     content: "";
     position: absolute;
     width: 0;
-    background-color: black;
+    background-color: var(--bleugris);
     transition: width 0.2s ease;
     height: 2px;
 }
 
-.ulProduits li a::before {
-    top: 0;
+.ulNav li a::before {
+    bottom: 0; 
     left: 50%;
     transform: translateX(-50%);
 }
 
-.ulProduits li a::after {
+.ulNav li a::after {
     bottom: 0;
     right: 50%;
     transform: translateX(50%);
 }
 
-.ulProduits li a:hover::before {
+.ulNav li a:hover::before {
     width: 100%;
 }
 
-.ulProduits li a:hover::after {
-    width: 100%;
+.ulNav li a:hover::after {
+    width: 0; 
 }
 
-.ulProduits li a:hover{
+.ulNav li a:hover{
     color: var(--bleugris);
 }

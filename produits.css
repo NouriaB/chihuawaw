@@ -9,17 +9,19 @@ section{
 .carte{
     position: relative;
     padding: 2vh;
-    margin-bottom: 5vh;
+    margin-bottom: 10vh;
     font-size: 2.5vh;
     height: auto; /* s'adapte à la taille du contenu */
+    border-radius: 0.5vh;
 }
 
 .carte:hover{
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .image{
     width: 38vh;
+    border-radius: 0.5vh;
     object-fit: contain;
 }
 
@@ -31,7 +33,13 @@ section{
 .divInfosArticle{
     display: flex;
     justify-content: space-between;
-    padding: 1vh 0 2vh 0;
+    padding: 0.5vh 0 2vh 0;
+    align-items: end;
+}
+
+.iconeAjouterPanier{
+    width: 4vh;
+    margin-right: 0.2vh;
 }
 
 .BTNdescription {
@@ -39,10 +47,8 @@ section{
     transform: translate(-50%, 125%);
     width: 60%;
     border-radius: 1rem;
-    border: none;
     font-weight: bold;
-    background-color: steelblue;
-    /* background-color: var(--bleugris); */
+    background-color: var(--bleugris);
     color: white;
     font-size: 2.2vh;
     padding: 1.5vh 0;
@@ -50,6 +56,7 @@ section{
     bottom: 0;
     opacity: 0;
     transition: 0.3s ease-out;
+    text-align: center;
 }
 
 .carte:hover .BTNdescription {

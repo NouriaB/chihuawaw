@@ -26,12 +26,14 @@ if(isset($_POST["bout_inscription"])){
     $email = $_POST["email"];
     $mdp = $_POST["mdp"];
     $mdp_hache = password_hash($mdp, PASSWORD_DEFAULT);
+    
+    $_SESSION["prenom"] = $prenom;
 
     $req = "INSERT INTO utilisateur (nom, prenom, telephone, email, mdp, type_utilisateur) 
             VALUES ('$nom', '$prenom', null, '$email', '$mdp_hache', 'client')";
     mysqli_query($id, $req);
     $redirection= "<p class='pAlerteRedirection'>Inscription validée, bienvenue $prenom!</p>";
-    header("refresh:3;url=index.php");
+    header("refresh:2;url=index.php");
     exit; 
 }?>
 
@@ -73,11 +75,12 @@ if(isset($_POST["bout_inscription"])){
                         <div class="title">S'inscrire</div>
                         <!-- Form inscription -->
                         <form action="connexion.php" method="post">
-                            <input class="input" name="nom" placeholder="Nom" type="text">
-                            <input class="input" name="prenom" placeholder="Prénom" type="text">
-                            <input class="input" name="email" placeholder="Email" type="email">
-                            <input class="input" name="mdp" placeholder="Mot de passe" type="password">
+                            <input class="input" name="nom" placeholder="Nom" type="text" required>
+                            <input class="input" name="prenom" placeholder="Prénom" type="text" required>
+                            <input class="input" name="email" placeholder="Email" type="email" required>
+                            <input class="input" name="mdp" placeholder="Mot de passe" type="password" required>
                             <input class="formBTN" type="submit" value="Valider" name="bout_inscription">
+                            <?php if(isset($redirection)) echo $erreur;?>
                         </form>
                     </div>
                     
@@ -90,6 +93,5 @@ if(isset($_POST["bout_inscription"])){
     <a href="index.php"><img class="iconeFleche" src="images/retour.png" alt="icone_fleche"></a>
     <a href="index.php">Retour au site</a>
 </div>
-<?php include 'footer.php'; ?> 
 </body>
 </html>

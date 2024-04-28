@@ -8,7 +8,7 @@
 
     <?php include 'header.php';  
     include "BDDconnexion.php";
-    $sql = "SELECT * FROM produit";
+    $sql = "SELECT * FROM produit WHERE type_produit='t-shirt'";
     $result = mysqli_query($id, $sql);
     ?>
 </head>

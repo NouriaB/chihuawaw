@@ -3,13 +3,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
 
-<header>
+<?php
+header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date dans le passé pour éviter les pb de cache
+?>
 
-    <!-- <ul class="bandeauLivraison">
-        <li><img src="images/navbar/iconeFDP" class="iconeBandeau" alt="">Livraison offerte dès 59 €</li>
-        <li><img src="images/navbar/iconeLivraison" class="iconeBandeau" alt="">Point Relais ou à domicile</li>
-        <li><img src="images/navbar/iconeRetour" class="iconeBandeau" alt="">Retour gratuit sous 30 jours</li>
-    </ul> -->
+<header>
 
     <div class="mainContainer">
 
@@ -23,33 +22,42 @@
             </svg>
         </div>
        
-        <!-- Nav icone -->
-        <nav>
-            <ul class="ulNav">
+        <!-- div icones -->
+            
+            <div class="divIcones">
+                <div class="bonjourPrenom">
+                    <?php 
+                    session_start();
+                    if(isset($_SESSION["prenom"]))
+                        echo 'Bonjour ' . $_SESSION["prenom"] . ' !';?>
+                </div>
                 <div class="divFavoris" onclick="location.href='favoris.php';" style="cursor: pointer;">
-                    <li class="iconeNav"></li>
-                    <li><a href="favoris.php">Favoris</a></li>
+                    <div class="icone"></div>
+                    <a href="favoris.php">Favoris</a>
                 </div>
                 <div class="divCompte" onclick="location.href='connexion.php';" style="cursor: pointer;">
-                    <li class="iconeNav"></li>
-                    <li><a href="connexion.php">Compte</a></li>
+                    <div class="icone"></div>
+                    <li><a href="connexion.php">Compte</a>
                 </div>
                 <div class="divPanier" onclick="location.href='panier.php';" style="cursor: pointer;">
-                    <li class="iconeNav"></a></li>
-                    <li><a href="panier.php">Panier</a></li>
+                    <div class="icone"></a></div>
+                    <a href="panier.php">Panier</a>
                 </div>
-            </ul>
-        </nav>
+            </div>
 
     </div>
         
-    <ul class="ulProduits">
-        <li><a href="produits.php">Voir tous les produits</a></li>
-        <li><a href="">T-shirts</a></li>
-        <li><a href="">Pulls</a></li>
-        <li><a href="">Sweatshirts</a></li>
-        <li><a href="">Robes</a></li>
-        <li><a href="">Manteaux</a></li>
-    </ul>
+    <!-- <hr> -->
+
+    <nav>
+        <ul class="ulNav">
+            <li><a href="produits.php">Voir tous les produits</a></li>
+            <li><a href="tshirts.php">T-shirts</a></li>
+            <li><a href="pulls.php">Pulls</a></li>
+            <li><a href="sweatshirts.php">Sweatshirts</a></li>
+            <li><a href="robes.php">Robes</a></li>
+            <li><a href="manteaux.php">Manteaux</a></li>
+        </ul>
+    </nav>
     
 </header>
