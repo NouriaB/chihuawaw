@@ -45,6 +45,38 @@ a{
     width: 20vh;
 }
 
+/* Début Loupe */
+.containerLoupe {    
+    position: relative;
+    min-width: 150px;
+  }
+
+.inputLoupe {
+    display: flex;
+    width: 40vh;
+    padding: 10px 0px 10px 20px;
+    border-radius: 9999px;
+    border: solid 2px black;
+    /* border: solid 1px #333; */
+    transition: all .2s ease-in-out;
+    outline: none;
+    opacity: 0.8;
+}
+
+.containerLoupe svg {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+}
+
+.inputLoupe:focus {
+    opacity: 1;
+    width: 70vh;
+    border: solid 2px var(--bleugris);
+} /* Fin Loupe */
+
+
 .divIcones{
     display: flex;
     gap: 5vh;
@@ -71,11 +103,9 @@ a{
 .divFavoris .icone{
     background-image: url("images/navbar/iconeFavoris.png");
 }
-
 .divCompte .icone{
     background-image: url("images/navbar/iconeCompte.png");
 }
-
 .divPanier .icone{
     background-image: url("images/navbar/iconePanier.png");
 }
@@ -84,55 +114,21 @@ a{
 .divFavoris:hover a {
     background-image: url("images/navbar/iconeFavorisRempli.png");
     color: var(--bleugris);
-
 }
-
 .divCompte:hover .icone,
 .divCompte:hover a {
     background-image: url("images/navbar/iconeCompteRempli.png");
     color: var(--bleugris);
 }
-
 .divPanier:hover .icone,
 .divPanier:hover a{
     background-image: url("images/navbar/iconePanierRempli.png");
     color: var(--bleugris);
 }
 
-/* Début Loupe */
-.containerLoupe {    
-    position: relative;
-    min-width: 150px;
-  }
-
-.inputLoupe {
-    display: flex;
-    width: 40vh;
-    padding: 10px 0px 10px 20px;
-    border-radius: 9999px;
-    border: solid 1px #333;
-    transition: all .2s ease-in-out;
-    outline: none;
-    opacity: 0.8;
-}
-
-.containerLoupe svg {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translate(0, -50%);
-}
-
-.inputLoupe:focus {
-    opacity: 1;
-    width: 70vh;
-    border: solid 1px var(--bleugris);
-
-} /* Fin Loupe */
-
-nav{
+/* nav{
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-}
+} */
 
 .ulNav{
     display: flex;
@@ -145,6 +141,7 @@ nav{
     padding: 1vh;
     border-radius: 3vh;
     z-index: 9999;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .ulNav li a {

@@ -15,10 +15,22 @@ if(isset($_POST["bout_connexion"])){
             $_SESSION["nom"] = $ligne["nom"];
             $_SESSION["prenom"] = $ligne["prenom"];
             $_SESSION["id_utilisateur"]=$ligne["id_utilisateur"];
+
+             // Récupérer id_client
+             $id_utilisateur = $ligne["id_utilisateur"];
+             $req_client = "SELECT id_client FROM client WHERE id_client = '$id_utilisateur'";
+             $res_client = mysqli_query($id, $req_client);
+             $ligne_client = mysqli_fetch_assoc($res_client);
+             $_SESSION["id_client"] = $ligne_client["id_client"];
+
             header("location:index.php");
             $redirectionConnexion =  "<p class='pAlerteredirectionConnexion'> Bienvenue </p>";
-        } else $erreur =  "<p class='pAlerteErreur'> Identifiants incorrects </p>";
-    } else $erreur =  "<p class='pAlerteErreur'> Identifiants incorrects </p>";
+        } else {
+            $erreur =  "<p class='pAlerteErreur'> Identifiants incorrects </p>";
+        }
+    } else {
+        $erreur =  "<p class='pAlerteErreur'> Identifiants incorrects </p>";
+    }
 }
 
 if(isset($_POST["bout_inscription"])){
@@ -33,6 +45,20 @@ if(isset($_POST["bout_inscription"])){
     $req = "INSERT INTO utilisateur (nom, prenom, telephone, email, mdp, type_utilisateur) 
             VALUES ('$nom', '$prenom', null, '$email', '$mdp_hache', 'client')";
     mysqli_query($id, $req);
+
+    // Récupérer id_utilisateur et l'insérer dans la table client
+    $id_utilisateur = mysqli_insert_id($id);
+    $date_inscription = date('Y-m-d H:i:s'); // Récupère la date et l'heure actuelle au format MySQL
+
+    $req_client = "INSERT INTO client (id_client, date_inscription) 
+                VALUES ('$id_utilisateur', '$date_inscription')";
+
+    mysqli_query($id, $req_client);
+
+ 
+     $_SESSION["id_utilisateur"] = $id_utilisateur;
+     $_SESSION["id_client"] = $id_utilisateur;
+     
     $redirection= "<p class='pAlerteRedirection'>Inscription validée, bienvenue $prenom!</p>";
     header("refresh:2;url=index.php");
     exit; 
