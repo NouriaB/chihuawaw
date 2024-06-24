@@ -85,7 +85,7 @@ a{
     position: relative;
 }
 
-.divFavoris, .divCompte, .divPanier{
+.divFavoris, .divCompte, .divPanier, .divDeconnexion{
     display: flex;
     flex-direction: column;
     gap : 0.4vh; /* espace vertical entre l'icone et le texte */
@@ -108,6 +108,9 @@ a{
 }
 .divPanier .icone{
     background-image: url("images/navbar/iconePanier.png");
+}
+.divDeconnexion .icone{
+    background-image: url("images/navbar/iconeDeconnexion.png");
 }
 
 .divFavoris:hover .icone,

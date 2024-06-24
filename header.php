@@ -31,7 +31,6 @@
                 <div class="icone"></div>
                 <a href="favoris.php">Favoris</a>
             </div>
-            
             <div class="divCompte">
                 <a href="<?php echo isset($_SESSION["prenom"]) ? "profil.php" : "connexion.php"; ?>" style="cursor: pointer;">
                     <div class="icone"></div>
@@ -46,6 +45,12 @@
                 <div class="icone"></div>
                 <a href="panier.php">Panier</a>
             </div>
+            <?php if(isset($_SESSION['prenom'])) : ?>
+                <div class="divDeconnexion" onclick="location.href='deconnexion.php';" style="cursor: pointer;">
+                    <div class="icone"></div>
+                    <a href="deconnexion.php">Déconnexion</a>
+                </div>
+            <?php endif; ?>
         </div>
 
 
